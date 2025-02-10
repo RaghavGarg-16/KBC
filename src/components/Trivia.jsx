@@ -40,7 +40,7 @@ export default function Trivia({
       setClassName(a.correct ? "answer correct" : "answer wrong")
     );
     delay(5000, () => {
-      setQuestionNumber((prev) => prev + 1);
+      setQuestionNumber((prev) => (a.correct ? prev + 1 : prev));
       if (a.correct) {
         correctAnswer();
         delay(1000, () => {

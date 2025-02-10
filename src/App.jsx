@@ -169,7 +169,8 @@ function App() {
     },
     {
       id: 8,
-      question: "A picture of three lions is seen in the national emblem of India. What is written underneath it?",
+      question:
+        "A picture of three lions is seen in the national emblem of India. What is written underneath it?",
       answers: [
         {
           text: "Money alone triumphs",
@@ -191,7 +192,8 @@ function App() {
     },
     {
       id: 9,
-      question: "In depictions of God Rama, he is famously holding what in his right hand?",
+      question:
+        "In depictions of God Rama, he is famously holding what in his right hand?",
       answers: [
         {
           text: "A flower",
@@ -213,7 +215,8 @@ function App() {
     },
     {
       id: 10,
-      question: "On an American $100 bill, there is a portrait of which American statesman?",
+      question:
+        "On an American $100 bill, there is a portrait of which American statesman?",
       answers: [
         {
           text: "Benjamin Franklin",
@@ -279,7 +282,8 @@ function App() {
     },
     {
       id: 13,
-      question: "The song Darshan Do Ghanshyam was written by which famous Indian poet, according to the movie?",
+      question:
+        "The song Darshan Do Ghanshyam was written by which famous Indian poet, according to the movie?",
       answers: [
         {
           text: "Mirabai",
@@ -323,7 +327,8 @@ function App() {
     },
     {
       id: 15,
-      question: "Which Disney character famously leaves a glass slipper behind at a royal ball?",
+      question:
+        "Which Disney character famously leaves a glass slipper behind at a royal ball?",
       answers: [
         {
           text: "Pocahontas",
@@ -368,9 +373,10 @@ function App() {
   );
 
   useEffect(() => {
-    questionNumber > 1 &&
-      setEarned(moneyPyramid.find((m) => m.id === questionNumber - 1).amount);
+    const amount = moneyPyramid.find((m) => m.id === questionNumber)?.amount;
+    setEarned(amount || "$ 0");
   }, [moneyPyramid, questionNumber]);
+  console.log(stop, questionNumber, "stop");
   return (
     <div className="app">
       {username ? (
